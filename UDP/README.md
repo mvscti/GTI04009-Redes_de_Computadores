@@ -2,7 +2,7 @@
 # Práticas com UDP
 
 Neste diretório, se encontram os códigos utilizados nas práticas sobre o protocolo UDP. Todos os scritps foram escritos em Python 3. A relação segue abaixo:
-*   [udp_local](blob/main/UDP/udp_local.py) 
+*   [udp_local](./UDP/udp_local.py) 
 *   [udp_remote](udp_remote.py) 
 *   [echoserver_udp_tcp](echoserver_udp_tcp.py)
 *   [udp_unicast_server](udp_unicast_client.py)
