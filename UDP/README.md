@@ -2,8 +2,8 @@
 # Práticas com UDP
 
 Neste diretório, se encontram os códigos utilizados nas práticas sobre o protocolo UDP. Todos os scritps foram escritos em Python 3. A relação segue abaixo:
-*   [udp_local](UDP/udp_local.py) (Créditos <a hfref="https://github.com/brandon-rhodes/fopnp" target="_blank">Foundations of Python Network Programming</a>>
-*   [udp_remote](UDP/udp_remote.py)  (Créditos <a hfref="https://github.com/brandon-rhodes/fopnp" target="_blank">Foundations of Python Network Programming</a>>
+*   [udp_local](UDP/udp_local.py) 
+*   [udp_remote](UDP/udp_remote.py) 
 *   [echoserver_udp_tcp](UDP/echoserver_udp_tcp.py)
 *   [udp_unicast_server](UDP/udp_unicast_client.py)
 *   [udp_unicast_client](UDP/udp_unicast_client.py)
@@ -16,7 +16,7 @@ Neste diretório, se encontram os códigos utilizados nas práticas sobre o prot
 ## Descrição dos códigos
 Cada script visa explorar aspectos distintos no emprego do protocolo UDP para transmissão de pacotes em uma rede de dados. Ou seja, os scripts demonstram cenários onde um serviço sem confirmação de entrega, como o UDP, poderia ser aplicado e outros onde o TCP seria a melhor solução
 
-### udp_local e udp_remoto
+### udp_local e udp_remoto [Créditos](https://github.com/brandon-rhodes/fopnp)
 
 Permitem, através de uma forma básica, a comunicação através de sockets UDP. A versão local permite executar um servidor que responde apenas a requisições na interface de <i>loopback</i> e a remota, a qualquer requisição UDP vinda de uma rede local ou até mesmo através da Internet. Para execução da versão local:
 ```
