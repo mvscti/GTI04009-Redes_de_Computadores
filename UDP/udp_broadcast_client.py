@@ -1,4 +1,4 @@
-import argparse, socket, sys
+import socket
 
 #endereço de boradcast
 BROADCAST='' #endereço de broadcast
