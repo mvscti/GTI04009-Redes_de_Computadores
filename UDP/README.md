@@ -43,15 +43,15 @@ Onde `<TIPO>` pode ser `udp` ou `tcp` e `<PORTA>` (opcional) é a porta a qual o
 
 ### udp_unicast (cliente e servidor)
 Demonstra o endereçamento de pacotes feito a um único destinatário. É necessário informar, no código, a porta UDP a qual servidor escuta (no cliente e no servidor). 
-![comunicação_unicast](https://pt.wikipedia.org/wiki/Ficheiro:Unicast.svg)
+![comunicação_unicast](https://upload.wikimedia.org/wikipedia/commons/7/75/Unicast.svg)
 
 ### udp_multicast (cliente e servidor)
 Demonstra o endereçamento de pacotes feito a múltiplos destinatários, simultaneamente. É necessário informar, no código, a porta UDP a qual servidor escuta (no cliente e no servidor). 
-![comunicação_multicast](https://pt.wikipedia.org/wiki/Multicast#/media/Ficheiro:Multicast.svg)
+![comunicação_multicast](https://upload.wikimedia.org/wikipedia/commons/3/30/Multicast.svgsvg)
 
 ### udp_broacast (cliente e servidor)
 Demonstra o endereçamento de um pacote a todos destinatários, simultanemanete, em uma subrede local. É necessário informar, no código, a porta UDP a qual servidor escuta (no cliente e no servidor). 
-![comunicação_broadcast](https://pt.wikipedia.org/wiki/Multicast#/media/Ficheiro:Broadcast.svg)
+![comunicação_broadcast](https://upload.wikimedia.org/wikipedia/commons/d/dc/Broadcast.svg.svg)
 
 ### sender_file_tcp_udp
 Permite enviar arquivos entre dois hosts e demonstra como um serviço sem confirmação de entrega, como o UDP, pode comprometer a entrega. É possível executar o código utlizando TCP ou UDP (emissor e receptor). Para executar:
