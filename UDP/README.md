@@ -47,11 +47,11 @@ Demonstra o endereçamento de pacotes feito a um único destinatário. É necess
 
 ### udp_multicast (cliente e servidor)
 Demonstra o endereçamento de pacotes feito a múltiplos destinatários, simultaneamente. É necessário informar, no código, a porta UDP a qual servidor escuta (no cliente e no servidor). 
-![comunicação_multicast](https://upload.wikimedia.org/wikipedia/commons/3/30/Multicast.svgsvg)
+![comunicação_multicast](https://upload.wikimedia.org/wikipedia/commons/3/30/Multicast.svg)
 
 ### udp_broacast (cliente e servidor)
 Demonstra o endereçamento de um pacote a todos destinatários, simultanemanete, em uma subrede local. É necessário informar, no código, a porta UDP a qual servidor escuta (no cliente e no servidor). 
-![comunicação_broadcast](https://upload.wikimedia.org/wikipedia/commons/d/dc/Broadcast.svg.svg)
+![comunicação_broadcast](https://upload.wikimedia.org/wikipedia/commons/d/dc/Broadcast.svg)
 
 ### sender_file_tcp_udp
 Permite enviar arquivos entre dois hosts e demonstra como um serviço sem confirmação de entrega, como o UDP, pode comprometer a entrega. É possível executar o código utlizando TCP ou UDP (emissor e receptor). Para executar:
