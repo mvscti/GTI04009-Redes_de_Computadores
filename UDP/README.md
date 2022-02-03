@@ -1,4 +1,4 @@
-[Retornar a Tabela de Conteúdos](../README.md)
+[Retornar a Tabela de Conteúdos](../)
 # Práticas com UDP
 
 Neste diretório, se encontram os códigos utilizados nas práticas sobre o protocolo UDP. Todos os scritps foram escritos em Python 3. A relação segue abaixo:
@@ -13,7 +13,7 @@ Neste diretório, se encontram os códigos utilizados nas práticas sobre o prot
 *   [udp_multicast_client](udp_multicast_client.py)
 *   [sender_file_tcp_udp](sender_file_tcp_udp.py)
 
-## Descrição dos códigos
+## Descrição dos scripts
 Cada script visa explorar aspectos distintos no emprego do protocolo UDP para transmissão de pacotes em uma rede de dados. Ou seja, os scripts demonstram cenários onde um serviço sem confirmação de entrega, como o UDP, poderia ser aplicado e outros onde o TCP seria a melhor solução
 
 ### udp_local e udp_remoto [(Créditos: Foundations of Python Network Programming](https://github.com/brandon-rhodes/fopnp))
