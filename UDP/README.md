@@ -22,4 +22,4 @@ Permitem, através de uma forma básica, a comunicação através de sockets UDP
 ```
 $ python3 udp_local.py <TIPO> -p <PORTA> 
 ```
-Onde <i><TIPO></i> pode ser <i>client</> ou <i>server</i> e <i><PORTA></i> é a porta UDP que servidor ou cliente está "escutando" (padrão 1060).
+Onde `<TIPO>` pode ser `client` ou `server` e `<PORTA>` (opcional) é a porta UDP que servidor ou cliente está "escutando" (padrão 1060).
