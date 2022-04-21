@@ -34,7 +34,7 @@ O servidor na versão local recebe uma mensagem do cliente, determina o tamanho 
 
 ### echo_server_udo_tcp
 
-Servidor simples que retransmite ao cliente todas as mensagens que recebe. Pode se comportar como um servidor UDP e TCP. Quando utilizado um software de captura de pacotes, como o [wireshark](https://www.wireshark.org/), pode ser útil para visualizar a diferença entre ambos os protocolos. Este script não acompanha um cliente. Neste caso, o utilitário netcat, do Linux, netcad permite enviar pacotes TCP e UDP e é um exemplo que pode ser empregado para funcionar como cliente. Para executar o script:
+Servidor simples que retransmite ao cliente todas as mensagens que recebe. Pode se comportar como um servidor UDP e TCP. Um software de captura de pacotes, como o [wireshark](https://www.wireshark.org/), pode ser útil para visualizar a diferença entre ambos os protocolos. O script não acompanha um cliente. Neste caso, o utilitário Netcat, do Linux, permite enviar pacotes TCP e UDP e é um exemplo que pode ser empregado para funcionar como cliente. Para executar o script:
 
 ```
 $ python3 echoserver_udp_tcp.py <TIPO> -p <PORTA> 
