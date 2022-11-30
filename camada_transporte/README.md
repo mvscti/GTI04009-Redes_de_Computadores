@@ -13,7 +13,7 @@ O processo de estabelecimento de uma conexão TCP é baseado no processo de "ape
 
 - SYN (<em>Synchronize</em>)- "Quero me comunicar com você, aqui está o número sequencial do pacote com o qual começarei"
 - SYN-ACK - "Certo, aqui está o número sequencial inicial usarei na minha direção"
-- ACK (<em>Acknowledgement)- "Certo!"
+- ACK (<em>Acknowledgement</em>)- "Certo!"
 Outros três ou quatro pacotes são necessários para finalizar uma conexão (FIN, FIN-ACK, ACK).
 
 ### User Datagram Protocol (UDP)
@@ -25,6 +25,7 @@ Ambos os protocolos TCP e UDP utilizam o conceito de portas que, resumidamente, 
 * Porta 53 UDP - DNS
 * Porta 80 TCP - HTTP
 * Porta 443 TCP - HTTPS
+
 As portas compreendidas entre 0 e 1023 são conhecidas por <em>well-known ports</em>. São aquelas destinadas aos serviços mais comuns na Internet, como email, web, transferência de arquivos, etc. As demais portas podem estar livres e podem ser utilizadas por outras aplicações.
 
 # Práticas com TCP e UDP
