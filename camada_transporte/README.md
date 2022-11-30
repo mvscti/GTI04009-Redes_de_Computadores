@@ -8,7 +8,9 @@ No modelo TCP/IP, a camada de transporte é encarregada pela transmissão de dad
 Protocolo confiável (garante a entrega dos pacotes), portanto orientado a conexão.Em suma, ele refaz o envio dos datagramas em caso de erros, mantém a organização dos pacotes (nem sempre chegam na ordem correta) e também garante que os dados não cheguem duplicados. Podemos dizer que o TCP é o sustentáculo da Internet.
 Para garantir a entrega confiável de pacotes, basicamente, o TCP identifica cada pacote com uma espécie de etiqueta, contendo um número sequencial (normalmente aleatório), onde cada extremidade é capaz de verificar e ordenar os dados na sequência correta.
 O processo de estabelecimento de uma conexão TCP é baseado no processo de "aperto triplo de mão" (<em>three-way-handshake</em>), conforme pode ser visto na figura abaixo:
+
 ![three-way-handshake](https://upload.wikimedia.org/wikipedia/commons/8/8a/Tcp-handshake.png)
+
 - SYN (<em>Synchronize</em>)- "Quero me comunicar com você, aqui está o número sequencial do pacote com o qual começarei"
 - SYN-ACK - "Certo, aqui está o número sequencial inicial usarei na minha direção"
 - ACK (<em>Acknowledgement)- "Certo!"
