@@ -26,7 +26,7 @@ Ambos os protocolos TCP e UDP utilizam o conceito de portas que, resumidamente, 
 * Porta 80 TCP - HTTP
 * Porta 443 TCP - HTTPS
 
-As portas compreendidas entre 0 e 1023 são conhecidas por <em>well-known ports</em>. São aquelas destinadas aos serviços mais comuns na Internet, como email, web, transferência de arquivos, etc. As portas compreendidas entre 1024 a 49151 são considerados "portas registradas" (<em>registered ports</em>), o que significa que são registradas por empresas de software. As demais portas são chamadas portas privadas, que podem ser utilizadas por outras aplicações. 
+As portas compreendidas entre 0 e 1023 são conhecidas por <em>well-known ports</em>. São aquelas destinadas aos serviços mais comuns na Internet, como email, web, transferência de arquivos, etc. As portas compreendidas entre 1024 a 49151 são consideradas "portas registradas" (<em>registered ports</em>), o que significa que são registradas por empresas de software. As demais portas, chamadas portas privadas, podem ser utilizadas por outras aplicações. 
 
 Existem diversas formas de se saber quais portas de um determinado <em>host</em> se encontram usadas em um determinado momento. Uma das técnicas mais utilizadas é o uso de escaneadores de portas (<em>port scan</em>) ou varredor de portas, como o <a href="https://nmap.org/man/pt_BR/man-port-scanning-techniques.html" target="_blank">Nmap</a>.
 
