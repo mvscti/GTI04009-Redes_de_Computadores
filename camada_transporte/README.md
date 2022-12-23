@@ -5,7 +5,7 @@ No modelo TCP/IP, a camada de transporte é encarregada pela transmissão de dad
 
 ### Transmission Control Protocol (TCP)
 
-Protocolo confiável (garante a entrega dos pacotes), portanto orientado a conexão.Em suma, ele refaz o envio dos datagramas em caso de erros, mantém a organização dos pacotes (nem sempre chegam na ordem correta) e também garante que os dados não cheguem duplicados. Podemos dizer que o TCP é o sustentáculo da Internet.
+Protocolo confiável (garante a entrega dos pacotes), portanto, é orientado a conexão. Em suma, ele refaz o envio dos datagramas em caso de erros, mantém a organização dos pacotes (nem sempre chegam na ordem correta) e também garante que os dados não cheguem duplicados. Podemos dizer que o TCP é o sustentáculo da Internet.
 Para garantir a entrega confiável de pacotes, basicamente, o TCP identifica cada pacote com uma espécie de etiqueta, contendo um número sequencial (normalmente aleatório), onde cada extremidade é capaz de verificar e ordenar os dados na sequência correta.
 O processo de estabelecimento de uma conexão TCP é baseado no processo de "aperto triplo de mão" (<em>three-way-handshake</em>), conforme pode ser visto na figura abaixo:
 
@@ -18,15 +18,18 @@ Outros três ou quatro pacotes são necessários para finalizar uma conexão (FI
 
 ### User Datagram Protocol (UDP)
 
-Diferente do TCP, o UDP é considerado um protocolo não confiável, ou seja, não há a garantia de entrega dos dados. Também não há a ordenação dos pacotes e nem controle de fluxo. O UDP é mais utilizado em aplicações que demandam de simplicidade ou fluxo de dados de tempo real (como em <em>streamings</em>). Aplicações que encaixam num modelo de pergunta-resposta (como o DNS, que será visto em outra oportunidade) são beneficiadas pelo uso do UDP.
+Diferente do TCP, o UDP é considerado um protocolo não confiável, ou seja, não há a garantia de entrega dos dados. Também não há a ordenação dos pacotes e nem controle de fluxo. O UDP é mais utilizado em aplicações que demandam de simplicidade ou fluxo de dados de tempo real (como em <em>streamings</em>). Aplicações que encaixam num modelo de pergunta-resposta (como o DNS, que será visto na Camada de Aplicação) são beneficiadas pelo uso do UDP.
 ### Portas TCP e UDP
-Ambos os protocolos TCP e UDP utilizam o conceito de portas que, resumidamente, permitem com que mais de uma aplicação possa operar sob um mesmo endereço IP. Uma analogia interessante é a de um prédio. Neste caso, cada <em>host</em> é um prédio. O endereço deste prédio seria o seu endereço IP e o complemento (as portas TCP ou UDP), são os números dos apartamentos. Assim como neste exemplo, as portas (números dos apartamentos), podem até serem repetidas, mas nunca para um mesmo prédio (pode haver o apartamento número 21 no prédio A e também no prédio B, mas nunca dois apartamentos com número 21 para um mesmo prédio). São utilizados 2 bytes para representar número de portas (tanto para o TCP quanto UDP), sendo possível representar 65.536 portas distintas para cada protocolo. Algumas portas já são conhecidas para serviços famosos na Internet, como por exemplo:
+Ambos os protocolos TCP e UDP utilizam o conceito de portas que, resumidamente, permitem com que mais de uma aplicação possa operar sob um mesmo endereço IP. Uma analogia interessante é a de um prédio. Neste caso, cada <em>host</em> seria um prédio. O endereço deste prédio seria o endereço IP do <em>host</em> e o complemento (as portas TCP ou UDP), são os números dos apartamentos. Assim como neste exemplo, as portas (números dos apartamentos), podem até serem repetidas, mas nunca para um mesmo prédio (pode haver o apartamento número 21 no prédio A e também no prédio B, mas nunca dois apartamentos com o mesmo número 21, para um mesmo prédio). São utilizados 2 bytes para representar o número de portas (tanto para o TCP quanto UDP), sendo possível então representar 65.536 portas distintas, para cada protocolo. Algumas portas já são conhecidas para serviços famosos na Internet, como por exemplo e não limitadas somente a estas:
 * Porta 21 TCP - FTP
 * Porta 53 UDP - DNS
 * Porta 80 TCP - HTTP
 * Porta 443 TCP - HTTPS
 
-As portas compreendidas entre 0 e 1023 são conhecidas por <em>well-known ports</em>. São aquelas destinadas aos serviços mais comuns na Internet, como email, web, transferência de arquivos, etc. As demais portas podem estar livres e podem ser utilizadas por outras aplicações.
+As portas compreendidas entre 0 e 1023 são conhecidas por <em>well-known ports</em>. São aquelas destinadas aos serviços mais comuns na Internet, como email, web, transferência de arquivos, etc. As portas compreendidas entre 1024 a 49151 são considerados "portas registradas" (<em>registered ports</em>), o que significa que são registradas por empresas de software. As demais portas são chamadas portas privadas, que podem ser utilizadas por outras aplicações. 
+
+Existem diversas formas de se saber quais portas de um determinado <em>host</em> se encontram usadas em um determinado momento. Uma das técnicas mais utilizadas é o uso de escaneadores de portas (<em>port scan</em>) ou varredor de portas, como o <a href="https://nmap.org/man/pt_BR/man-port-scanning-techniques.html" target="_blank">Nmap</a>.
+
 
 # Práticas com TCP e UDP
 
