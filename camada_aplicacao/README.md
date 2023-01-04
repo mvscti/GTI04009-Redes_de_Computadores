@@ -22,9 +22,10 @@ Como você deve imaginar, a Internet não faria o menor sentido se esta camada n
 É uma tarefa difícil descrever todos os protocolos desta camada, haja visto que são muitos e neste momento, algum pode estar sendo criado. Então iremos descrever então alguns dos principais serviços existentes na camada de aplicação.
 
 ### DNS - <em>Domain Name System</em>
-O  Sistema de Nomes de Domínio, mais conhecido da sigla DNS (em inglês) é o protocolo que permite com que seres humanos possam se comunicar com qualquer <em>host</em> sem a necessidade de memorizar seu endereço IP. Ao invés disso, um grande sistema hierárquico distribuído permite com que exista uma "traduação" de um endereço IP para um domínio (alfanumérico), muito mais fácil de ser memorizado do que um endereço IP (imagine se for um endereço IP na sexta versão, com 128 bits). O melhor termo que define o papel deste protocolo seria <strong>resolução</strong> de nomes. Por padrão, o DNS utiliza o protocolo [UDP](https://github.com/mvscti/GTI04009-Redes_de_Computadores/tree/main/camada_transporte) na porta número 53. O DNS trabalha em uma arquitetura cliente-servidor.
+O  Sistema de Nomes de Domínio, mais conhecido pela sigla DNS (em inglês), é um protocolo da camada de aplicação que permite com que seres humanos possam se comunicar com qualquer <em>host</em> sem a necessidade de memorizar ou saber seu endereço IP. Ao invés disso, um grande sistema hierárquico e distribuído, permite que seja feita a "traduação" de um endereço IP para um domínio (alfanumérico), muito mais fácil de ser memorizado do que um endereço IP (imagine se o endereço IP de um <em>host</em> for um endereço na sexta versão, com 128 bits). O melhor termo que define o papel deste protocolo seria <strong>resolução</strong> de nomes ao invés de tradução. Por padrão, o DNS utiliza o protocolo [UDP](https://github.com/mvscti/GTI04009-Redes_de_Computadores/tree/main/camada_transporte) na porta número 53. O DNS trabalha em uma arquitetura do tipo cliente-servidor.
 
 Na figura a seguir, podemos compreender melhor como funciona a hierarquia do DNS:
+
 ![dns-hierarquia](https://www.inetdaemon.com/img/dns-hierarchy.gif)
 
 
@@ -61,3 +62,4 @@ Verifica se um dado domínio possui registros do [tipo MX](https://support.googl
 $ python3 dns_email.py <DOMÍNIO_OU_IP> 
 ```
 Onde `<DOMÍNIO_OU_IP>` é o nome do domínio (sem o WWW) ou o endereço IP do mesmo.
+
