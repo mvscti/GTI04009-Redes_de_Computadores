@@ -63,3 +63,29 @@ $ python3 dns_email.py <DOMÍNIO_OU_IP>
 ```
 Onde `<DOMÍNIO_OU_IP>` é o nome do domínio (sem o WWW) ou o endereço IP do mesmo.
 
+## Agente do Usuário
+Um importante fator presente na camada de aplicação, que visa facilitar a utilização dos protocolos pelos usuários, são os <strong>agentes do usuário</strong>. Resumidamente, um agente do usuário é um software (dotado de interface gráfica ou baseada em comandos) que permite com que ocorra a interação entre o usuário e um determinado protocolo. Na arquitetura cliente-servidor, o agente do usuário é também conhecido como cliente ou software cliente. Exemplos de agentes do usuário, para os mais diversos protocolos da camada de aplicação e não limitados somente a estes:
+* Navegador (ou <em>browser</em>), para os protocolos HTTP, HTTPS e FTP
+* Webmail (cliente de email na web), para os protocolos SMTP e POP3. Ex.: Gmail, Microsoft Outlook, Yahoo! Mail, etc
+* Cliente de email, para os protocolos SMTP e POP3. Ex.: Mozilla Thunderbird
+* Terminais do Windows e Linux, para diversos procotolos, como FTP, SSH, Telnet, SCP, etc.
+* BitTorrent (ou torrrent), para compartilhamento de arquivos em uma arquitetura P2P. Ex.: BitTorrent (software cliente), uTorrent, etc.
+
+Um exemplo interessante é simular um agente do usuário para o protocolo HTTP, no caso, um <em>browser</em>. Quando acessamos qualquer página na web, costumamos não perceber que o navegador é um facilitador do processo de acesso (como deveria ser qualquer agente do usuário), bastando apenas informar a URL da página e se tudo ocorrer bem, podemos visualizar o seu conteúdo. No entanto, normalmente não temos a noção do que ocorre nos "bastidores" dessa requisição. Qualquer navegador, deve seguir os preceitos do protocolo HTTP (mais a frente falaremos sobre isso) para que seus usuários possam visualizar as páginas desejadas. Quando informamos a URL de uma página na barra de endereços do navegador, o mesmo utiliza as informações que inserimos para fazer uma requisição a um servidor HTTP (lembre-se que o HTTP funciona, por padrão, na porta TCP, número 80), utilizando os <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Methods" target="_blank">preceitos do protocolo</a>, algum de seus verbos ou métodos.
+
+Existem diversas formas de utilizar um cliente web que não seja um navegador, mas uma forma interessante é utilizar o já conhecido comando ```nc```, do Linux. Neste exemplo, vamos fazer uma requisição ao servidor HTTP da Google:
+```echo -e "GET / HTTP/1.1\r \nHost: www.google.com.br\r\n" | nc www.google.com.br 80```
+
+Onde:
+* ``` GET / HTTP/1.1``` significa que a requisição foi feita utilizando o método ```GET```, requisitando o recurso ```/``` (normalmente, é a página padrão, ou ```index.html```) e ```HTTP/1.1``` significa que a requisição é feita pela versão ```1.1``` do protocolo
+* ```Host: www.google.com``` é o domínio ou endereço IP que o servidor atende
+* O comanando ```echo``` acima funciona como se fosse um valor digitado pelo usuário e "exportado" para o comando ```nc www.google.com.br 80```, onde ```80``` é a porta a qual o servidor web responde (como mencionando anteriormente, é a porta padrão em que os servidores HTTP respondem)
+
+Se tudo ocorrer bem, você verá o conteúdo HTML da página inicial da Google e também o cabeçalho da resposta. Analise o cabeçalho da resposta, e saberá o <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status" target="_blank">status da requisição</a>, a data em que requisição ocorreu, dentre outras informações (é possível descobrir até qual é o software que o servidor web utiliza, normalmente Apache ou Nginx. 
+
+Outra ferramenta interessante para esta tarefa é o cURL (disponível também no Windows, desde a versão 10). Exemplos:
+##### Recuperando o apenas o cabeçalho da resposta
+```curl -I https://google.com.br```
+
+##### Recuperando toda a resposta
+```curl https://reqbin.com/echo```
