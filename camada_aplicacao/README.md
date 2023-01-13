@@ -89,3 +89,24 @@ Outra ferramenta interessante para esta tarefa é o cURL (disponível também no
 
 ##### Recuperando toda a resposta
 ```curl https://reqbin.com/echo```
+
+### Simulando um agente do usuário para o protocolo SMTP
+O protocolo SMTP (do inglês, <em>Simple Mail Transfer Protocol</em> - Protocolo Transferência de Email Simples) é um dos mais antigos protocolos da camada de aplicação da pilha TCP/IP e é o principal protocolo para envio de emails até os dias de hoje. Um servidor SMTP responde, por padrão, <strong>na porta TCP, número 25</strong>. O principal protocolo para <strong>recebimento de emails</strong> é o <a href="http://deptal.estgp.pt:9090/cisco/ccna1/course/module10/10.1.1.4/10.1.1.4.html" target="_blank">POP3</a>, que, por padrão, responde na porta TCP, número 110. E, sim! O serviço de email pode conter dois protocolos: um para envio e outro para recebimento.
+
+Quando você acessa seu email através de um navegador, você está utilizando um <strong>webmail</strong>, que de tão comum que é nos dias atuais, se tornou mais popularmente chamado apenas de email. Mas, como você já descobriu, o email é um serviço muito mais antigo do que a própria web. O que seu provedor de webmail faz é disponibilizar a você uma interace gráfica que facilita a sua interação com os protocolos SMTP e POP3 (ou seja, seu webmail é um agente do usuário para emails). Tanto é, que se você quiser enviar emails da forma como o protocolo SMTP realmente trabalha, em teoria, você poderia fazê-lo (os principais provedores de email atuais adicionam etapas de segurança, que tornam este processo um pouco mais burocrático). Conforme você pode ver na figura a seguir, um email é enviado utilizando todos os trâmites preconizados pelo protocolo SMTP, onde ```S``` significa uma resposta do servidor, ```C``` é uma mensagem do cliente e os números que aparecem são [códigos numéricos de resposta](http://penta2.ufrgs.br/rc952/trab1/smtpcodi.html) (parecido com o que temos no protocolo HTTP):
+
+![smtp](https://www.smtp2go.com/wp-content/uploads/2017/02/Screenshot-9-763x500.png)
+
+Ou seja, o que o webmail faz para você é justamente utilizar os processos necessários do protocolo SMTP para que você tenha uma interface simples, intuitiva e objetiva (espera-se) para enviar seus emails. Existem outros agentes do usuário para o protocolo SMTP e POP3, como o Mozilla Thunderbird, mencionado anteriormente. A diferença desses em relação ao uso de webmails, é que esses clientes de email devem ser instalados em seu dispositivo.
+
+Você mesmo (a) pode simular um agente do usuário (sem interface gráfica) no seu dispositivo, usando o telnet:
+ * ```telnet <DOMÍNIO> <PORTA> ```, onde a porta padrão, conforme mencionado anteriormente, é a 25. 
+ 
+ Se tudo ocorrer bem, você deverá conseguir enviar um email utilizando puramente o protocolo SMTP.
+
+Conforme mencionado anteriormente, por razões de segurança, a maior parte dos grandes provedores de email atualmente disponíveis adicionaram passos extra para se autenticar nestes servidores (como autenticação em duas etapas) e tornou mais burocática a tarefa de conseguir enviar emails utilizando uma interface de comandos, como o telnet. Ainda assim, se você quiser apenas entender melhor como funciona o protocolo, como age um servidor SMTP (e também um agente do usuário), existem algumas soluções didáticas para isso, como o [Devnull SMTP Fake Server](http://www.aboutmyip.com/AboutMyXApp/DevNullSmtp.jsp). Trata-se de um servidor SMTP falso (não envia emails), que tem por objetivo demonstrar, de forma didática, um servidor SMTP atuando, sem ser necessário criar emails, configurar ou coisas do tipo. Não é necesária a instalação, mas é preciso ter uma máquina virtual Java instalada em sua máquina, na versão 1.4 ou superior. Depois de baixar o "servidor" (o código se encontra [neste respositório](DevNullSmtp.jar)) e com a máquina virtual Java instalada e configurada em sua máquina, basta executar o seguinte comando no terminal do seu Sistema Operacional:
+```java -jar DevNullSmtp.jar```
+Se você optar por "estartar" o servidor na porta padrão de um servidor SMTP (TCP, número 25), possivelmente precisará de privilégios administrativos do seu sistema. Caso isso ocorra, no Windows, abra o terminal para executar o comando acima como administrador e se estiver utlizando Linux, pode fazer da seguinte forma:
+```sudo java -jar DevNullSmtp.jar```
+
+Enquanto o servidor estiver em execução, você pode utilizar o telnet para estudar o protocolo. Há também um [código](smtp.py) no repositório, em Python, que simula um cliente SMTP, utilizando a biblioteca ```smtplib```. Com este script, você pode automatizar suas aplicações pare enviarem emails (a maior parte das linguagens de programação multipropósito, como Python, têm bibliotecas que permitem envio de emails).
