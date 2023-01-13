@@ -105,8 +105,9 @@ Você mesmo (a) pode simular um agente do usuário (sem interface gráfica) no s
  Se tudo ocorrer bem, você deverá conseguir enviar um email utilizando puramente o protocolo SMTP.
 
 Conforme mencionado anteriormente, por razões de segurança, a maior parte dos grandes provedores de email atualmente disponíveis adicionaram passos extra para se autenticar nestes servidores (como autenticação em duas etapas) e tornou mais burocática a tarefa de conseguir enviar emails utilizando uma interface de comandos, como o telnet. Ainda assim, se você quiser apenas entender melhor como funciona o protocolo, como age um servidor SMTP (e também um agente do usuário), existem algumas soluções didáticas para isso, como o [Devnull SMTP Fake Server](http://www.aboutmyip.com/AboutMyXApp/DevNullSmtp.jsp). Trata-se de um servidor SMTP falso (não envia emails), que tem por objetivo demonstrar, de forma didática, um servidor SMTP atuando, sem ser necessário criar emails, configurar ou coisas do tipo. Não é necesária a instalação, mas é preciso ter uma máquina virtual Java instalada em sua máquina, na versão 1.4 ou superior. Depois de baixar o "servidor" (o código se encontra [neste respositório](DevNullSmtp.jar)) e com a máquina virtual Java instalada e configurada em sua máquina, basta executar o seguinte comando no terminal do seu Sistema Operacional:
-```java -jar DevNullSmtp.jar```
+* ```java -jar DevNullSmtp.jar```
+
 Se você optar por "estartar" o servidor na porta padrão de um servidor SMTP (TCP, número 25), possivelmente precisará de privilégios administrativos do seu sistema. Caso isso ocorra, no Windows, abra o terminal para executar o comando acima como administrador e se estiver utlizando Linux, pode fazer da seguinte forma:
-```sudo java -jar DevNullSmtp.jar```
+* ```sudo java -jar DevNullSmtp.jar```
 
 Enquanto o servidor estiver em execução, você pode utilizar o telnet para estudar o protocolo. Há também um [código](smtp.py) no repositório, em Python, que simula um cliente SMTP, utilizando a biblioteca ```smtplib```. Com este script, você pode automatizar suas aplicações pare enviarem emails (a maior parte das linguagens de programação multipropósito, como Python, têm bibliotecas que permitem envio de emails).
