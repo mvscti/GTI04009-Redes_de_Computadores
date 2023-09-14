@@ -8,22 +8,25 @@ Compreender a Camada Física é crucial para engenheiros de rede, administradore
 ## Meios de Tranmissão de Sinais
 Nesta camada, se destacam os diversos meios de transmissão dos sinais. Existem diversos padrões e norma, como os diversos padrões da [IEEE](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjIuNn51KeBAxUJg5UCHWzUCPwQFnoECAYQAQ&url=https%3A%2F%2Fwww.ieee.org%2F&usg=AOvVaw2jXR22SNQz8Aiofd5sgXaE&opi=89978449), que criam e padronizam as tecnologias WiFi, Bluetooth, ZigBee, Ethernet, dentre outros. Estes padrões garantem a interoperabilidade entre dispositivos de diferentes fabricantes. Dentre os meios de transmissão, destacam-se:
  1. Meios de Comunicação por Fio:
-        - Fibra Óptica: A fibra óptica é um meio de comunicação que utiliza cabos feitos de fibras de vidro ou plástico para transmitir dados na forma de pulsos de luz. Ela oferece altas taxas de transmissão, imunidade à interferência eletromagnética e é amplamente utilizada em redes de longa distância, como a infraestrutura da internet global.
-        Cabos de Cobre: Cabos de cobre, como o par trançado e o cabo coaxial, são usados para transmitir sinais elétricos. Eles são comuns em redes locais (LANs) e são usados para conectar dispositivos, como computadores, a switches e roteadores.
+        . Fibra Ótica: A fibra ótica é um meio de comunicação que utiliza cabos feitos de fibras de vidro ou plástico para transmitir dados na forma de pulsos de luz. Ela oferece altas taxas de transmissão, imunidade à interferência eletromagnética e é amplamente utilizada em redes de longa distância, como a infraestrutura da internet global.
+       
+        . Cabos de Cobre: Cabos de cobre, como o par trançado e o cabo coaxial, são usados para transmitir sinais elétricos. Eles são comuns em redes locais (LANs) e são usados para conectar dispositivos, como computadores, a switches e roteadores.
 
 2. Meios de Comunicação sem Fio:
-        - Wi-Fi: Redes Wi-Fi usam ondas de rádio para transmitir dados sem fio. Elas são populares em ambientes domésticos e empresariais e permitem a conexão de dispositivos como laptops, smartphones e tablets a uma rede local.
-        - Bluetooth: O Bluetooth é uma tecnologia sem fio de curto alcance usada principalmente para conectar dispositivos como fones de ouvido, teclados e mouses a computadores e smartphones.
-        - Redes Celulares: As redes celulares, como 4G e 5G, são usadas para comunicações móveis de longa distância. Elas permitem a transmissão de voz e dados para dispositivos móveis, como telefones celulares.
+        . Wi-Fi: Redes Wi-Fi usam ondas de rádio para transmitir dados sem fio. Elas são populares em ambientes domésticos e empresariais e permitem a conexão de dispositivos como laptops, smartphones e tablets a uma rede local.
+        
+        . Bluetooth: O Bluetooth é uma tecnologia sem fio de curto alcance usada principalmente para conectar dispositivos como fones de ouvido, teclados e mouses a computadores e smartphones.
+        
+        . Redes Celulares: As redes celulares, como 4G e 5G, são usadas para comunicações móveis de longa distância. Elas permitem a transmissão de voz e dados para dispositivos móveis, como telefones celulares.
 
 3. Satélites:
-        - Comunicações via Satélite: Satélites de comunicação estão em órbita ao redor da Terra e são usados para transmitir sinais de comunicação em longas distâncias. Eles são essenciais para serviços como televisão via satélite, comunicações globais e GPS.
+        . Comunicações via Satélite: Satélites de comunicação estão em órbita ao redor da Terra e são usados para transmitir sinais de comunicação em longas distâncias. Eles são essenciais para serviços como televisão via satélite, comunicações globais e GPS.
 
 4. Meios de Comunicação Alternativos:
-        - Redes de Energia Elétrica (PLC): Em algumas aplicações, a própria rede elétrica pode ser usada para transmitir dados, uma técnica conhecida como Comunicação por Linha de Energia (PLC).
+        . Redes de Energia Elétrica (PLC): Em algumas aplicações, a própria rede elétrica pode ser usada para transmitir dados, uma técnica conhecida como Comunicação por Linha de Energia (PLC).
 
 5. Meios de Comunicação Experimental:
-        - Laser Point-to-Point: Em algumas situações, lasers podem ser usados para transmitir dados em linha de visão direta entre dois pontos, oferecendo alta largura de banda e segurança.
+        . Laser Point-to-Point: Em algumas situações, lasers podem ser usados para transmitir dados em linha de visão direta entre dois pontos, oferecendo alta largura de banda e segurança.
 
 ## Codificação de Sinais
 
@@ -44,21 +47,3 @@ A principal característica da codificação Manchester é a representação de 
 ![codificação_manchester](manchester_code.jpg)
 
 Uma das vantagens cruciais da codificação Manchester é a capacidade de fornecer uma sincronização confiável entre o transmissor e o receptor, garantindo que ambos estejam em sintonia em relação ao início de cada bit. Isso torna a codificação Manchester especialmente útil em aplicações que requerem alta precisão e resistência a interferências, como comunicações em redes Ethernet, sistemas de controle industrial e diversas aplicações de telecomunicações.
-
-Tópicos abordados neste repositório:
-
-    Meios de Transmissão: Exploraremos os diversos meios físicos utilizados para transmitir sinais, incluindo cabos de cobre, fibras óticas e comunicações sem fio. 
-
-    Codificação de Sinais: Discutiremos como os dados são transformados em sinais elétricos ou ópticos para transmissão, bem como técnicas de modulação e demodulação.
-
-    Topologias de Rede: Investigaremos diferentes arranjos físicos de dispositivos em uma rede, como estrela, anel e barramento.
-
-    Equipamentos de Rede: Abordaremos os dispositivos e componentes usados para criar redes, incluindo switches, roteadores, repetidores e hubs.
-
-    Erros e Tolerância a Falhas: Analisaremos os desafios relacionados à detecção e correção de erros na Camada Física, bem como técnicas de redundância e tolerância a falhas.
-
-    Padrões e Normas: Destacaremos os padrões e normas que governam a Camada Física, garantindo a interoperabilidade entre dispositivos de diferentes fabricantes.
-
-    Desenvolvimento de Projetos: Forneceremos recursos e orientações para ajudar no planejamento e implementação de redes na Camada Física.
-
-Este repositório serve como um recurso educacional e prático para aprofundar o conhecimento sobre a Camada Física em redes de computadores. Seja bem-vindo a explorar e contribuir para nosso entendimento coletivo deste aspecto crucial da comunicação digital.
