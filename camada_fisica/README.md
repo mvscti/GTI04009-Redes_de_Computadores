@@ -45,7 +45,13 @@ A modulação e demodulação desempenham um papel fundamental em uma variedade 
 
 ### Prática de codificação de sinais
 
-Neste diretório, se encontra um código que demonstra como um dado é codificação utilizando codificação Manchester. A codificação Manchester é uma técnica fundamental na área da comunicação digital e que desempenha um papel crucial na transmissão de dados confiáveis ​​entre dispositivos eletrônicos. Criada na década de 1940, essa técnica de codificação foi desenvolvida com o objetivo de garantir uma transmissão precisa de informações, especialmente em ambientes suscetíveis a interferências e ruídos.
+Neste diretório, se encontra um código que demonstra como um dado é codificação utilizando codificação Manchester. Para execução:
+```
+python3 manchester_encoding.py
+```
+Caso você queira trocar o valor a ser codificado, basta alterar a linha ```7``` do código para informar dado que você deseja codificar.
+
+A codificação Manchester é uma técnica fundamental na área da comunicação digital e que desempenha um papel crucial na transmissão de dados confiáveis ​​entre dispositivos eletrônicos. Criada na década de 1940, essa técnica de codificação foi desenvolvida com o objetivo de garantir uma transmissão precisa de informações, especialmente em ambientes suscetíveis a interferências e ruídos.
 
 A principal característica da codificação Manchester é a representação de cada bit de dados por meio de transições de sinal entre dois níveis, geralmente de baixo para alto e vice-versa. Essas transições ocorrem no meio de cada período de bit, tornando-a uma codificação de **transição de fase**. Isso significa que a presença ou ausência de uma transição em um determinado ponto no tempo representa um valor binário específico, geralmente 0 ou 1, conforme pode ser visto na imagem abaixo:
 

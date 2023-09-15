@@ -7,33 +7,33 @@ No modelo TCP/IP, a camada de transporte é encarregada pela transmissão de dad
 
 Protocolo confiável (garante a entrega dos pacotes), portanto, é orientado a conexão. Em suma, ele refaz o envio dos datagramas em caso de erros, mantém a organização dos pacotes (nem sempre chegam na ordem correta) e também garante que os dados não cheguem duplicados. Podemos dizer que o TCP é o sustentáculo da Internet.
 Para garantir a entrega confiável de pacotes, basicamente, o TCP identifica cada pacote com uma espécie de etiqueta, contendo um número sequencial (normalmente aleatório), onde cada extremidade é capaz de verificar e ordenar os dados na sequência correta.
-O processo de estabelecimento de uma conexão TCP é baseado no processo de "aperto triplo de mão" (<em>three-way-handshake</em>), conforme pode ser visto na figura abaixo:
+O processo de estabelecimento de uma conexão TCP é baseado no processo de "aperto triplo de mão" (*three-way-handshake*), conforme pode ser visto na figura abaixo:
 
 ![three-way-handshake](https://upload.wikimedia.org/wikipedia/commons/8/8a/Tcp-handshake.png)
 
-- SYN (<em>Synchronize</em>)- "Quero me comunicar com você, aqui está o número sequencial do pacote com o qual começarei"
+- SYN (*Synchronize*)- "Quero me comunicar com você, aqui está o número sequencial do pacote com o qual começarei"
 - SYN-ACK - "Certo, aqui está o número sequencial inicial usarei na minha direção"
-- ACK (<em>Acknowledgement</em>)- "Certo!"
+- ACK (*Acknowledgement*)- "Certo!"
 Outros três ou quatro pacotes são necessários para finalizar uma conexão (FIN, FIN-ACK, ACK).
 
 ### User Datagram Protocol (UDP)
 
-Diferente do TCP, o UDP é considerado um protocolo não confiável, ou seja, não há a garantia de entrega dos dados. Também não há a ordenação dos pacotes e nem controle de fluxo. O UDP é mais utilizado em aplicações que demandam de simplicidade ou fluxo de dados de tempo real (como em <em>streamings</em>). Aplicações que encaixam num modelo de pergunta-resposta (como o DNS, que será visto na Camada de Aplicação) são beneficiadas pelo uso do UDP.
+Diferente do TCP, o UDP é considerado um protocolo não confiável, ou seja, não há a garantia de entrega dos dados. Também não há a ordenação dos pacotes e nem controle de fluxo. O UDP é mais utilizado em aplicações que demandam de simplicidade ou fluxo de dados de tempo real (como em *streamings*). Aplicações que encaixam num modelo de pergunta-resposta (como o DNS, que será visto na Camada de Aplicação) são beneficiadas pelo uso do UDP.
 ### Portas TCP e UDP
-Ambos os protocolos TCP e UDP utilizam o conceito de portas que, resumidamente, permitem com que mais de uma aplicação possa operar sob um mesmo endereço IP. Uma analogia interessante é a de um prédio. Neste caso, cada <em>host</em> seria um prédio. O endereço deste prédio seria o endereço IP do <em>host</em> e o complemento (as portas TCP ou UDP), são os números dos apartamentos. Assim como neste exemplo, as portas (números dos apartamentos), podem até serem repetidas, mas nunca para um mesmo prédio (pode haver o apartamento número 21 no prédio A e também no prédio B, mas nunca dois apartamentos com o mesmo número 21, para um mesmo prédio). São utilizados 2 bytes para representar o número de portas (tanto para o TCP quanto UDP), sendo possível então representar 65.536 portas distintas, para cada protocolo. Algumas portas já são conhecidas para serviços famosos na Internet, como por exemplo e não limitadas somente a estas:
+Ambos os protocolos TCP e UDP utilizam o conceito de portas que, resumidamente, permitem com que mais de uma aplicação possa operar sob um mesmo endereço IP. Uma analogia interessante é a de um prédio. Neste caso, cada *host* seria um prédio. O efndereço deste prédio seria o endereço IP do *host* e o complemento (as portas TCP ou UDP), são os números dos apartamentos. Assim como neste exemplo, as portas (números dos apartamentos), podem até serem repetidas, mas nunca para um mesmo prédio (pode haver o apartamento número 21 no prédio A e também no prédio B, mas nunca dois apartamentos com o mesmo número 21, para um mesmo prédio). São utilizados 2 bytes para representar o número de portas (tanto para o TCP quanto UDP), sendo possível então representar 65.536 portas distintas, para cada protocolo. Algumas portas já são conhecidas para serviços famosos na Internet, como por exemplo e não limitadas somente a estas:
 * Porta 21 TCP - FTP
 * Porta 53 UDP - DNS
 * Porta 80 TCP - HTTP
 * Porta 443 TCP - HTTPS
 
-As portas compreendidas entre 0 e 1023 são conhecidas por <em>well-known ports</em>. São aquelas destinadas aos serviços mais comuns na Internet, como email, web, transferência de arquivos, etc. As portas compreendidas entre 1024 a 49151 são consideradas "portas registradas" (<em>registered ports</em>), o que significa que são registradas por empresas de software. As demais portas, chamadas portas privadas, podem ser utilizadas por outras aplicações. 
+As portas compreendidas entre 0 e 1023 são conhecidas por *well-known ports*. São aquelas destinadas aos serviços mais comuns na Internet, como email, web, transferência de arquivos, etc. As portas compreendidas entre 1024 a 49151 são consideradas "portas registradas" (*registered ports*), o que significa que são registradas por empresas de software. As demais portas, chamadas portas privadas, podem ser utilizadas por outras aplicações. 
 
-Existem diversas formas de se saber quais portas de um determinado <em>host</em> se encontram usadas em um determinado momento. Uma das técnicas mais utilizadas é o uso de escaneadores de portas (<em>port scan</em>) ou varredor de portas, como o <a href="https://nmap.org/man/pt_BR/man-port-scanning-techniques.html" target="_blank">Nmap</a>.
+Existem diversas formas de se saber quais portas de um determinado *host* se encontram usadas em um determinado momento. Uma das técnicas mais utilizadas é o uso de escaneadores de portas (*port scan*) ou varredor de portas, como o <a href="https://nmap.org/man/pt_BR/man-port-scanning-techniques.html" target="_blank">Nmap</a>.
 
 
 # Práticas com TCP e UDP
 
-Neste diretório, se encontram os códigos utilizados nas práticas sobre o protocolo TCP e UDP. Todos os <em>scritps</em> foram escritos em Python 3. A relação segue abaixo:
+Neste diretório, se encontram os códigos utilizados nas práticas sobre o protocolo TCP e UDP. Todos os *scritps* foram escritos em Python 3. A relação segue abaixo:
 *   [udp_local](udp_local.py) 
 *   [udp_remote](udp_remote.py) 
 *   [echoserver_udp_tcp](echoserver_udp_tcp.py)
@@ -53,13 +53,13 @@ Cada script visa explorar aspectos distintos no emprego dos protocolos TCP e UDP
 
 Permitem, através de uma forma básica, a comunicação através de [sockets](https://blog.pantuza.com/artigos/o-que-sao-e-como-funcionam-os-sockets) UDP. A versão local permite executar um servidor que responde apenas a requisições na interface de <i>loopback</i> e a remota, a qualquer requisição UDP vinda de uma rede local ou até mesmo através da Internet. Para execução da versão local:
 ```
-$ python3 udp_local.py <TIPO> -p <PORTA> 
+python3 udp_local.py <TIPO> -p <PORTA> 
 ```
 Onde `<TIPO>` pode ser `client` ou `server` e `<PORTA>` (opcional) é a porta UDP que servidor está "escutando" (padrão 1060).
  
 A versão remota pode ser executa como:
 ```
-$ python3 udp_remote.py <TIPO> -p <PORTA> <HOST> 
+python3 udp_remote.py <TIPO> -p <PORTA> <HOST> 
 ```
 Onde `<TIPO>` pode ser `client` ou `server`, `<PORTA>` (opcional) é a porta UDP que servidor está "escutando" (padrão 1060) e `<HOST>` é o endereço IP ao qual o servidor irá responder.
 
@@ -70,7 +70,7 @@ O servidor na versão local recebe uma mensagem do cliente, determina o tamanho 
 Servidor simples que retransmite ao cliente todas as mensagens que recebe. Pode se comportar como um servidor UDP e TCP. Um software de captura de pacotes, como o <a href="https://www.wireshark.org/" target="_blank">wireshark</a>, pode ser útil para visualizar a diferença entre ambos os protocolos. O script não acompanha um cliente. Neste caso, o utilitário Netcat, do Linux, permite enviar pacotes TCP e UDP e é um exemplo que pode ser empregado para funcionar como cliente. Para executar o script:
 
 ```
-$ python3 echoserver_udp_tcp.py <TIPO> -p <PORTA> 
+python3 echoserver_udp_tcp.py <TIPO> -p <PORTA> 
 ```
 Onde `<TIPO>` pode ser `udp` ou `tcp` e `<PORTA>` (opcional) é a porta a qual o servidor está "escutando" (padrão 1060).
 
@@ -90,7 +90,7 @@ Demonstra o encaminhamento de um pacote a todos destinatários, simultanemanete,
 Permite enviar arquivos entre dois hosts e demonstra como um serviço sem confirmação, como o UDP, pode comprometer a entrega. É possível executar o código utlizando TCP ou UDP (emissor e receptor). Para executar:
 
 ```
-$ python3 sender_file_tcp_udp.py <TIPO> -p <PORTA> -host <HOST> -file <NOME_DO_ARQUIVO>
+python3 sender_file_tcp_udp.py <TIPO> -p <PORTA> -host <HOST> -file <NOME_DO_ARQUIVO>
 ```
 Onde:
 *  `<TIPO>`: pode ser `receiver-tcp`, `receiver-udp`, `sender-tcp` e`sender-udp`
