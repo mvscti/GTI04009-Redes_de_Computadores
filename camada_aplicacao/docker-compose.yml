@@ -1,0 +1,13 @@
+
+services:
+  mailhog:
+    image: mailhog/mailhog
+    container_name: mailhog
+    # Optional: disable chatty logs
+    logging:
+      driver: 'none'
+    ports:
+      # Map the SMTP port from the container (1025) to the host (1025)
+      - "1025:1025"
+      # Map the web UI port from the container (8025) to the host (8025)
+      - "8025:8025"
